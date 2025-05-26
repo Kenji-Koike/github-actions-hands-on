@@ -1,0 +1,29 @@
+name: CIパイプライン # ワークフローの名前
+
+on:
+  push: # mainブランチへのプッシュ時に実行
+    branches:
+      - main
+  pull_request: # プルリクエスト作成・更新時に実行
+    branches:
+      - main
+  workflow_dispatch: # 手動実行を許可
+
+jobs:
+  build_and_test: # ジョブのID
+    runs-on: ubuntu-latest # 実行環境
+
+    steps:
+      - name: コードをチェックアウト
+        uses: actions/checkout@v4 # リポジトリのコードを仮想マシンにコピーするアクション
+
+      - name: Node.jsをセットアップ
+        uses: actions/setup-node@v4 # Node.js環境をセットアップするアクション
+        with:
+          node-version: '20' # 使用するNode.jsのバージョンを指定
+
+      - name: 依存関係をインストール
+        run: npm install # package.jsonに基づいて依存関係をインストール
+
+      - name: テストを実行
+        run: npm test # package.jsonで定義したテストスクリプトを実行

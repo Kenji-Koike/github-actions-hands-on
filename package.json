@@ -1,0 +1,20 @@
+{
+  "name": "github-actions-hands-on",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/app.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kenji-Koike/github-actions-hands-on.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kenji-Koike/github-actions-hands-on/issues"
+  },
+  "homepage": "https://github.com/Kenji-Koike/github-actions-hands-on#readme"
+}
