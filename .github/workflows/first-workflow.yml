@@ -1,0 +1,16 @@
+# .github/workflows/first-workflow.yml
+name: 初めてのワークフロー # ワークフローの名前
+
+on: # ワークフローを実行するトリガー
+  workflow_dispatch: # GitHub UIから手動で実行できるようにする
+
+jobs: # 実行するジョブの集合
+  my_first_job: # ジョブのID (一意である必要があります)
+    runs-on: ubuntu-latest # ジョブを実行する環境 (仮想マシン)
+
+    steps: # ジョブ内で実行されるステップ
+      - name: こんにちは！と表示
+        run: echo "Hello, GitHub Actions!" # シェルコマンドを実行
+      
+      - name: 日付と時刻を表示
+        run: date # 別のシェルコマンドを実行
